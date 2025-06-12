@@ -6,10 +6,12 @@ class Calculator
     elsif length == 1
       str_input.to_i
     else
-      numbers = str_input.split /\s|\n|,/
-      sum = 0
-      numbers.each { |num| sum+= num.to_i }
-      sum
+      if str_input[0] != "/"
+        numbers = str_input.split /\s|\n|,/
+        sum = 0
+        numbers.each { |num| sum+= num.to_i }
+        sum
+      end
     end
   end
 end
