@@ -68,8 +68,7 @@ describe Calculator do
     let (:input) { "//;\n#{number1}; #{number2}" }
 
     it "returns sum of numbers when there are more than 1 number" do
-      result = Calculator.new.add(input)
-      expect { result }.to raise_error StandardError, "negative numbers not allowed -5"
+      expect { Calculator.new.add(input) }.to raise_error StandardError, "negative numbers not allowed -5"
     end
   end
 end

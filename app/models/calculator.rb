@@ -12,11 +12,7 @@ class Calculator
       else
         new_delimitor = str_input[2]
         numbers = str_input.split("\n").last.split(new_delimitor)
-        begin
-          sum(numbers)
-        rescue StandardError => e
-          e.message
-        end
+        sum(numbers)
       end
     end
   end
@@ -30,7 +26,7 @@ class Calculator
       sum+= num.to_i
     end
     if negative_nums.present?
-      raise StandardError.new("negative numbers not allowed #{negative_nums.join(',')}")
+      raise "negative numbers not allowed #{negative_nums.join(', ')}"
     end
     sum
   end
