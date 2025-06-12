@@ -61,4 +61,15 @@ describe Calculator do
       expect(result).to eq(6)
     end
   end
+
+  context "numbers with negative numbers" do
+    let (:number1) { -5 }
+    let (:number2) { 1 }
+    let (:input) { "//;\n#{number1}; #{number2}" }
+
+    it "returns sum of numbers when there are more than 1 number" do
+      result = Calculator.new.add(input)
+      expect { result }.to raise_error StandardError, "negative numbers not allowed -5"
+    end
+  end
 end

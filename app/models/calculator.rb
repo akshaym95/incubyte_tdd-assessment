@@ -18,7 +18,16 @@ class Calculator
   end
   def sum(numbers)
     sum = 0
-    numbers.each { |num| sum+= num.to_i }
+    negative_nums = []
+    numbers.each do |num|
+      if num.to_i < 0
+        negative_nums << num
+      end
+      sum+= num.to_i
+    end
+    # if negative_nums.present?
+    #   raise StandardError.new("negative numbers not allowed #{negative_nums.join(',')}")
+    # end
     sum
   end
 end
