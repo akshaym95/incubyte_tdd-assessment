@@ -26,7 +26,6 @@ class Calculator
       sum+= num.to_i
     end
     if negative_nums.present?
-
       raise "negative numbers not allowed #{negative_nums.join(', ')}"
     end
     sum
