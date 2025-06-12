@@ -17,4 +17,15 @@ describe Calculator do
       expect(result).to eq(number)
     end
   end
+
+  context "input contains multiple numbers" do
+    let (:number1) { 5 }
+    let (:number2) { 1 }
+    let (:input) { "#{number1}, #{number2}" }
+
+    it "returns sum of numbers when there are more than 1 digit" do
+      result = Calculator.new.add(input)
+      expect(result).to eq(6)
+    end
+  end
 end
