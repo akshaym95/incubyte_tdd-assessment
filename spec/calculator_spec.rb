@@ -18,7 +18,7 @@ describe Calculator do
     end
   end
 
-  context "input contains multiple numbers" do
+  context "input contains multiple numbers with comma seperator" do
     let (:number1) { 5 }
     let (:number2) { 1 }
     let (:input) { "#{number1}, #{number2}" }
