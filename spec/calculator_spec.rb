@@ -38,4 +38,15 @@ describe Calculator do
       expect(result).to eq(6)
     end
   end
+  context "input contains multiple numbers with new line  and , seperator" do
+    let (:number1) { 5 }
+    let (:number2) { 1 }
+    let (:number3) { 2 }
+    let (:input) { "#{number1} \n #{number2} , #{number3}" }
+
+    it "returns sum of numbers when there are more than 1 digit" do
+      result = Calculator.new.add(input)
+      expect(result).to eq(8)
+    end
+  end
 end
